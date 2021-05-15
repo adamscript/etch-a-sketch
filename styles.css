@@ -18,18 +18,13 @@ body{
 }
 
 .square_div{
-    background-color: brown;
-    width: 10px;
-    height: 10px;
-}
-
-.square_div:hover{
-    background-color: gold;
+    background-color: white;
 }
 
 #container{
     display: grid;
-    grid-gap: 1px;
+    width: 500px;
+    height: 500px;
     justify-content: center;
 }
 
@@ -39,7 +34,7 @@ button{
     width: 150px;
     height: 30px;
     border: 1px solid grey;
-    border-radius: 15px;
+    border-radius: 10px;
 
     font-weight: bold;
 }
