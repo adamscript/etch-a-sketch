@@ -1,0 +1,13 @@
+.square_div{
+    background-color: brown;
+    width: 20px;
+    height: 20px;
+}
+
+#container{
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(16, auto);
+    grid-template-rows: repeat(16, auto);
+    justify-content: center;
+}
