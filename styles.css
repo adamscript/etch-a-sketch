@@ -1,7 +1,11 @@
 .square_div{
     background-color: brown;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
+}
+
+.square_div:hover{
+    background-color: gold;
 }
 
 #container{
