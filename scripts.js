@@ -1,15 +1,26 @@
-rowsInput = prompt("Enter number of rows : (Max 100)")
-columnsInput = prompt("Enter number of columns : (Max 100)")
-
-function createGrid(rows, columns){
-    if(rows > 100 || columns > 100)
-    {
-        alert("Number too high :(")
+function newGrid(){
+    rowsInput = prompt("Enter number of rows : (Max 100)")
+    columnsInput = prompt("Enter number of columns : (Max 100)")
+    
+    if(rowsInput > 100 || columnsInput > 100){
+        alert("Number too high :(");
         return
     }
+    else{
+        clearGrid();
+        createGrid(rowsInput, columnsInput);
+    }
+}
 
-    container.style.gridTemplateColumns = ("auto ").repeat(columns)
-    container.style.gridTemplateRows = ("auto ").repeat(rows)
+function createGrid(rows, columns){
+    const container = document.getElementById('container')
+
+    while(container.firstChild){
+        container.removeChild(container.firstChild);
+    }
+
+    container.style.gridTemplateRows = ("auto ").repeat(rows);
+    container.style.gridTemplateColumns = ("auto ").repeat(columns);
 
     for(let i = 1; i <= rows * columns; i++){
         const square = document.createElement('div');
@@ -17,9 +28,8 @@ function createGrid(rows, columns){
         square.addEventListener("mouseover", () => {square.style.backgroundColor = "gold"})
         container.appendChild(square);
     }
+    return
 }
-
-createGrid(rowsInput, columnsInput)
 
 function clearGrid(){
     let elements = document.getElementsByClassName('square_div');
@@ -28,3 +38,5 @@ function clearGrid(){
     }
     return
 }
+
+createGrid(16, 16);
